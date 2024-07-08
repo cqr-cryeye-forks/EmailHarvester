@@ -70,9 +70,9 @@ class MyParser:
     def emails(self) -> List[str]:
         self.generic_clean()
         reg_emails = re.compile(
-            '[a-zA-Z0-9.\-_+#~!$&\',;=:]+' +
-            '@' +
-            '[a-zA-Z0-9.-]*' +
+            r'[a-zA-Z0-9.\-_+#~!$&\',;=:]+' +
+            r'@' +
+            r'[a-zA-Z0-9.-]*' +
             self.word)
         self.temp = reg_emails.findall(self.results)
         return self.unique()
